@@ -1,0 +1,57 @@
+:global {
+  code.styled {
+    background-color: @code-background;
+    color: @code-foreground;
+    display: block;
+    padding: .5em;
+    font-family: "Lucida Console", Monaco, monospace;
+    white-space: nowrap;
+    overflow-x: auto;
+
+    .keyword {
+      color: @code-pink;
+    }
+    .operator {
+      color: @code-pink;
+    }
+    .function {
+      color: @code-green;
+    }
+    .bracket {
+      color: @code-orange;
+    }
+    .string {
+      color: @code-yellow;
+    }
+    .number {
+      color: @code-purple;
+    }
+    .namespace {
+      color: @code-cyan;
+      font-style: italic;
+    }
+    .command {
+      color: @code-cyan;
+    }
+    .class {
+      color: @code-cyan;
+    }
+    .return {
+      color: @code-cyan;
+      font-style: italic;
+    }
+    .property {
+      color: @code-orange;
+      font-style: italic;
+    }
+    .type {
+      color: @code-cyan;
+      font-style: italic;
+    }
+    .tab {
+      height: 1em;
+      width: 2em;
+      display: inline-block;
+    }
+  }
+}

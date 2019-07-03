@@ -1,0 +1,9 @@
+<?xml version="1.0" standalone="no"?>
+<svg viewBox="0, 0, 320, 320"> <!-- With background -->
+  <circle cx="160" cy="160" r="158" style="stroke: #000000; stroke-width: 1; fill: #0000DD;" />
+  <polygon points="160,10 30,85 30,235 160,310 290,235 290,85" style="stroke: #000000; stroke-width: 1; fill: #F8F8F8;" />
+  <polygon points="30,85 160,160 290,85 246.66,60 160,110 73.33,60" style="stroke: #000000; stroke-width: 1; fill: #CE1919;" />
+  <polygon points="30,85 30,235 73.33,260 73.33,160 160,210 160,160" style="stroke: #000000; stroke-width: 1; fill: #CE1919;" />
+  <polygon points="290,85 290,235 246.66,260 246.66,160 160,210 160,160" style="stroke: #000000; stroke-width: 1; fill: #CE1919;" />
+  <line x1="160" y1="210" x2="160" y2="310" style="stroke: #000000; stroke-width: 1;" />
+</svg>

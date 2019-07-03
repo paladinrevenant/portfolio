@@ -1,0 +1,45 @@
+.SkillRow {
+  display: table-row;
+
+  &>* {
+    display: table-cell;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: .25em;
+    cursor: pointer;
+    
+    &:first-child {
+      border-left: 1px solid black;
+      border-radius: .5em 0 0 .5em;
+    }
+    
+    &:last-child {
+      border-right: 1px solid black;
+      border-radius: 0 .5em .5em 0;
+    }
+  }
+
+  &:hover>* {
+    background-color: lightgrey;
+  }
+  
+  &.selected>* {
+    background-color: lightgrey;
+  }
+
+  .label {
+    margin: 1em;
+    padding-right: .5em;
+    width: 1%;
+  }
+  
+  .rating {
+    margin: 1em;
+    padding-left: .5em;
+
+    svg * {
+      fill: url(#starGradient);
+      // fill: linear-gradient(90deg, rgba(183,134,40,1) 0%, rgba(238,182,9,1) 60%, rgba(198,147,32,1) 100%);
+    }
+  }
+}

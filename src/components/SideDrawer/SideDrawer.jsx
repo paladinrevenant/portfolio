@@ -1,4 +1,5 @@
 import React   from "react";
+import { Link } from "react-router-dom";
 import classes from "./SideDrawer.less";
 
 /**
@@ -10,7 +11,21 @@ const SideDrawer = (props) => {
                                  [classes.SideDrawer, classes.closed];
 
   return (
-    <div className={classList.join(" ")}>SideDrawer</div>
+    <div className={classList.join(" ")}>
+      <nav>
+        <ul>
+          <li>
+            SideDrawer
+          </li>
+          <li>
+            <Link to="/" onClick={props.drawerCloser}>Home</Link>
+          </li>
+          <li>
+            <Link to="/skills/" onClick={props.drawerCloser}>Skills</Link>
+          </li>
+        </ul>
+      </nav>
+    </div>
   );
 };
 

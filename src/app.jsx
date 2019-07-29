@@ -1,4 +1,5 @@
 import React           from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Backdrop        from "Components/Backdrop/Backdrop";
 import SideDrawer      from "Components/SideDrawer/SideDrawer";
 import SkillViewer     from "Components/SkillViewer/SkillViewer";
@@ -28,18 +29,19 @@ class App extends React.Component {
 
   render() {
     return (
-      <>
+      <Router>
         { this.starGradient }
         <TitleBar
           view={ this.state.desktopView ? VIEWS.DESKTOP : VIEWS.MOBILE }
           menuClickHandler={ this.sideDrawerToggle }
         />
         <Backdrop show={ this.state.sideDrawerOpen } clickHandler={ this.sideDrawerClose }/>
-        <SideDrawer open={ this.state.sideDrawerOpen } />
+        <SideDrawer open={ this.state.sideDrawerOpen } drawerCloser={ this.sideDrawerClose } />
         <main className={ classes.content }>
-          <SkillViewer />
+          <Route path="/" exact component={ Welcome } />
+          <Route path="/skills/" exact component={ SkillViewer } />
         </main>
-      </>
+      </Router>
     );
   }
 

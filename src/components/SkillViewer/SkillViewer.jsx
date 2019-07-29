@@ -25,18 +25,12 @@ class SkillViewer extends React.Component {
   }
 
   render() {
-    const languageSkills = this.formatSkillList(SKILL_TYPES.LANGUAGE);
-
-    const frameworkSkills = this.formatSkillList(SKILL_TYPES.FRAMEWORK);
-
-    const displayedSkills = this.state.openTab === SKILL_TYPES.LANGUAGE  ? languageSkills  :
-                            this.state.openTab === SKILL_TYPES.FRAMEWORK ? frameworkSkills :
-                                                                           null;
+    const displayedSkills = this.formatSkillList(this.state.openTab);
 
     const languagesTab  = <SkillTab open={ this.state.openTab === SKILL_TYPES.LANGUAGE  } clickHandler={ () => {this.selectTab(SKILL_TYPES.LANGUAGE); } } label="Languages"  />;
     const frameworksTab = <SkillTab open={ this.state.openTab === SKILL_TYPES.FRAMEWORK } clickHandler={ () => {this.selectTab(SKILL_TYPES.FRAMEWORK);} } label="Frameworks" />;
 
-    const skillDetails = this.state.skills.filter(skill => skill.selected).map(skill => <div key={ uniqueId() }>{skill.description}{skill.sample}</div>);
+    const skillDetails = this.state.skills.filter(skill => skill.selected).map(skill => <div key={ uniqueId() }><p>{skill.description}</p>{skill.sample}</div>);
 
     return (
       <div className={ classes.SkillViewer }>
@@ -61,18 +55,34 @@ class SkillViewer extends React.Component {
    */
   selectTab(selectedTab) {
     this.setState({ openTab: selectedTab });
+    this.selectSkill(null);
   }
 
+  /**
+   * Produce an array of SkillRow jsx elements for skills in the local state
+   * that are of the indicated skill type sorted in decending order by
+   * experience
+   * 
+   * @param {string} type The skill type to display
+   */
   formatSkillList(type) {
-    if (validateConstant(SKILL_TYPES, type)) {
-      return this.state.skills.filter(skill => skill.type === type).map(skill => {
+    if (validateConstant(SKILL_TYPES, type)) { // Make sure that the requested type is valid
+      return this.state.skills.filter(skill => skill.type === type) // Filter by type
+      .sort((a, b) => b.experience - a.experience) // Sort in decending order by experience
+      .map(skill => {
         return <SkillRow key={ uniqueId() } label={ skill.name } rating={ skill.experience } clickHandler={ ()=>{ this.selectSkill(skill.name); } } selected={skill.selected} />;
       });
     }
 
-    return null;
+    return null; // If the type is not valid, return null
   }
 
+  /**
+   * Mark any currently selected skill as not selected, and mark the named skill
+   * as selected.
+   * 
+   * @param {string} name the name of the skill
+   */
   selectSkill(name) {
     this.setState(state => {
       let skills = state.skills.map(skill => {

@@ -1,5 +1,6 @@
-import "Assets/reset.css";
-import "Assets/globalStyles.css";
+// import "Assets/reset.css";
+// import "Assets/globalStyles.css";
+import "Assets/paladin-styles.css";
 import React from "react";
 import ReactDOM from "react-dom";
 import ViewportService from "Services/viewport";

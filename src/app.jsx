@@ -1,5 +1,6 @@
 import React           from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import About           from "Components/About/About";
 import Backdrop        from "Components/Backdrop/Backdrop";
 import SideDrawer      from "Components/SideDrawer/SideDrawer";
 import SkillViewer     from "Components/SkillViewer/SkillViewer";
@@ -34,12 +35,14 @@ class App extends React.Component {
         <TitleBar
           view={ this.state.desktopView ? VIEWS.DESKTOP : VIEWS.MOBILE }
           menuClickHandler={ this.sideDrawerToggle }
+          drawerCloser={ this.sideDrawerClose }
         />
         <Backdrop show={ this.state.sideDrawerOpen } clickHandler={ this.sideDrawerClose }/>
         <SideDrawer open={ this.state.sideDrawerOpen } drawerCloser={ this.sideDrawerClose } />
         <main className={ classes.content }>
           <Route path="/" exact component={ Welcome } />
           <Route path="/skills/" exact component={ SkillViewer } />
+          <Route path="/me/" exact component={ About } />
         </main>
       </Router>
     );
@@ -87,6 +90,10 @@ class App extends React.Component {
       </defs>
     </svg>
   );
+
+  componentDidMount() {
+    this.updateView();
+  }
 }
 
 export default App;

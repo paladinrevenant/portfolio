@@ -63,7 +63,7 @@ const skills = [
   {
     name: "ReactJS",
     type: SKILL_TYPES.FRAMEWORK,
-    experience: 6,
+    experience: 8,
     description: "React Description",
     selected: false,
     sample: <SampleReact />

@@ -2,10 +2,12 @@ import React            from "react";
 import skillList        from "Assets/skills";
 import SkillRow         from "Components/SkillRow/SkillRow";
 import SkillTab         from "Components/SkillTab/SkillTab";
+import clearSelections  from "Helpers/clearSelections";
 import validateConstant from "Helpers/validateConstant";
 import { uniqueId }     from "lodash";
 import { SKILL_TYPES }  from "Source/constants";
 import classes          from "./SkillViewer.less";
+const SCROLL_INTERVAL = 2000;
 
 /**
  * Displays information about technical skills, experience, and level of competency
@@ -68,11 +70,7 @@ class SkillViewer extends React.Component {
       selectedIndex: 0
     };
 
-    currentSkillList = currentSkillList.map(skill => {
-      let newSkill = {...skill};
-        newSkill.selected = false;
-        return newSkill;
-    });
+    currentSkillList = clearSelections(currentSkillList);
 
     nextSkillList[0].selected = true;
 
@@ -85,7 +83,7 @@ class SkillViewer extends React.Component {
     }
 
     clearInterval(this.state.skillInterval);
-    newState.skillInterval = setInterval(this.scrollSelectedSkill, 2000);
+    newState.skillInterval = setInterval(this.scrollSelectedSkill, SCROLL_INTERVAL);
 
     this.setState(newState);
   }
@@ -96,9 +94,9 @@ class SkillViewer extends React.Component {
    * experience
    */
   formatSkillList(skills) {
-    return skills.map(skill => {
+    return skills ? skills.map(skill => {
       return <SkillRow key={ uniqueId() } label={ skill.name } rating={ skill.experience } clickHandler={ ()=>{ this.selectSkill(skill.name); } } selected={skill.selected} />;
-    });
+    }) : null;
   }
 
   /**
@@ -156,19 +154,11 @@ class SkillViewer extends React.Component {
 
   componentDidMount() {
     this.setState({
-      skillInterval: setInterval(this.scrollSelectedSkill, 2000)
+      skillInterval: setInterval(this.scrollSelectedSkill, SCROLL_INTERVAL)
     });
   }
 
   componentWillUnmount() {
-    let currentSkillList = this.state.openTab === SKILL_TYPES.LANGUAGE ? this.state.frameworkSkills : this.state.languageSkills;
-    let nextState = {};
-    currentSkillList = currentSkillList.map(skill => {
-      let newSkill = {...skill};
-        newSkill.selected = false;
-        return newSkill;
-    });
-
     clearInterval(this.state.skillInterval);
   }
 }

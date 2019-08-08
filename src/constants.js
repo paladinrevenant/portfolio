@@ -9,3 +9,5 @@ export const SKILL_TYPES = {
 };
 
 export const SITE_TITLE = "Mike's Portfolio";
+export const SITE_TITLE_DESKTOP = "Mike's Awesome Portfolio";
+export const SITE_SUBTITLE = "Something witty this way comes.";

@@ -16,12 +16,12 @@ class SkillViewer extends React.Component {
   constructor(props) {
     super(props);
 
-    let languageSkills = skillList.filter(skill => skill.type === SKILL_TYPES.LANGUAGE).sort((a, b) => b.experience - a.experience);
+    let languageSkills = clearSelections(skillList.filter(skill => skill.type === SKILL_TYPES.LANGUAGE).sort((a, b) => b.experience - a.experience));
     languageSkills[0].selected = true;
 
     this.state = {
       languageSkills: languageSkills,
-      frameworkSkills: skillList.filter(skill => skill.type === SKILL_TYPES.FRAMEWORK).sort((a, b) => b.experience - a.experience),
+      frameworkSkills: clearSelections(skillList.filter(skill => skill.type === SKILL_TYPES.FRAMEWORK).sort((a, b) => b.experience - a.experience)),
       openTab: SKILL_TYPES.LANGUAGE,
       selectedIndex: 0
     };
@@ -153,9 +153,11 @@ class SkillViewer extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({
+    const nextState = {
       skillInterval: setInterval(this.scrollSelectedSkill, SCROLL_INTERVAL)
-    });
+    };
+
+    this.setState(nextState);
   }
 
   componentWillUnmount() {

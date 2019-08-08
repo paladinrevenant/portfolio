@@ -1,5 +1,5 @@
 import React   from "react";
-import { Link } from "react-router-dom";
+import NavList from "Components/NavList/NavList";
 import classes from "./SideDrawer.less";
 
 /**
@@ -12,22 +12,7 @@ const SideDrawer = (props) => {
 
   return (
     <div className={classList.join(" ")}>
-      <nav>
-        <ul>
-          <li>
-            SideDrawer
-          </li>
-          <li>
-            <Link to="/" onClick={props.drawerCloser}>Home</Link>
-          </li>
-          <li>
-            <Link to="/skills/" onClick={props.drawerCloser}>Skills</Link>
-          </li>
-          <li>
-            <Link to="/me/" onClick={props.drawerCloser}>About Me</Link>
-          </li>
-        </ul>
-      </nav>
+      <NavList />
     </div>
   );
 };

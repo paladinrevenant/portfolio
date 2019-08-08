@@ -5,6 +5,7 @@ import Backdrop        from "Components/Backdrop/Backdrop";
 import SideDrawer      from "Components/SideDrawer/SideDrawer";
 import SkillViewer     from "Components/SkillViewer/SkillViewer";
 import TitleBar        from "Components/TitleBar/TitleBar";
+import TitleBarDesktop from "Components/TitleBarDesktop/TitleBarDesktop";
 import Welcome         from "Components/Welcome/Welcome";
 import ViewportService from "Services/viewport";
 import { VIEWS }       from "Source/constants";
@@ -29,14 +30,19 @@ class App extends React.Component {
   }
 
   render() {
+    const titleBar = this.state.desktopView ? (
+      <TitleBarDesktop />
+    ) : (
+      <TitleBar
+        menuClickHandler={ this.sideDrawerToggle }
+        drawerCloser={ this.sideDrawerClose }
+      />
+    );
+
     return (
       <Router>
         { this.starGradient }
-        <TitleBar
-          view={ this.state.desktopView ? VIEWS.DESKTOP : VIEWS.MOBILE }
-          menuClickHandler={ this.sideDrawerToggle }
-          drawerCloser={ this.sideDrawerClose }
-        />
+        { titleBar }
         <Backdrop show={ this.state.sideDrawerOpen } clickHandler={ this.sideDrawerClose }/>
         <SideDrawer open={ this.state.sideDrawerOpen } drawerCloser={ this.sideDrawerClose } />
         <main className={ classes.content }>

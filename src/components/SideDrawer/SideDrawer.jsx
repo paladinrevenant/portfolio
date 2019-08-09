@@ -12,6 +12,7 @@ const SideDrawer = (props) => {
 
   return (
     <div className={classList.join(" ")}>
+      <div>Menu</div>
       <NavList />
     </div>
   );

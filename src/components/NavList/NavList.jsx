@@ -1,12 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import classes from "./NavList.less";
 
 const NavList = (props) => (
-  <nav>
+  <nav className={ classes.NavList }>
     <ul>
-      <li>
-        SideDrawer
-      </li>
       <li>
         <Link to="/" onClick={props.drawerCloser}>Home</Link>
       </li>

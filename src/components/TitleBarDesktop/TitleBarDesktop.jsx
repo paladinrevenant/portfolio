@@ -1,5 +1,6 @@
 import React               from "react";
 import Logo                from "Assets/logo-nobg-sm.svg";
+import NavList             from "Components/NavList/NavList";
 import { faBars }          from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link }            from "react-router-dom";
@@ -18,7 +19,8 @@ const titleBarDesktop = (props) => {
         <div className={ classes.title }>{ SITE_TITLE_DESKTOP }</div>
         <div className={ classes.subtitle }>{ SITE_SUBTITLE }</div>
       </span>
-      <span onClick={ props.menuClickHandler } className={ classes.menu }><FontAwesomeIcon icon={ faBars } /></span>
+      {/* <span onClick={ props.menuClickHandler } className={ classes.menu }><FontAwesomeIcon icon={ faBars } /></span> */}
+      <NavList />
     </header>
   );
 };

@@ -2,21 +2,23 @@
 
 .TitleBar {
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
+  // display: flex;
+  // flex-direction: row;
+  // flex-wrap: nowrap;
+  // justify-content: space-between;
+  // align-items: center;
   z-index: 100;
   background-color: lightgrey;
   border-bottom: 1px solid black;
+  position: relative;
 
   &>* {
     padding: .25em .6em;
+    vertical-align: middle;
   }
 
   .titleContainer {
-    width: 100%;
+    // width: 100%;
 
     .title {
       font-size: 1.5em;
@@ -34,5 +36,16 @@
   .logo {
     height: 4em;
     vertical-align: top;
+  }
+
+  nav {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    li {
+      display: inline-block;
+      margin: 0 .25em;
+    }
   }
 }

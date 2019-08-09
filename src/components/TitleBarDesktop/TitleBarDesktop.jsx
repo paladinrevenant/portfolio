@@ -1,8 +1,6 @@
 import React               from "react";
 import Logo                from "Assets/logo-nobg-sm.svg";
 import NavList             from "Components/NavList/NavList";
-import { faBars }          from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link }            from "react-router-dom";
 import { SITE_TITLE_DESKTOP, SITE_SUBTITLE }      from "Source/constants";
 import classes             from "./TitleBarDesktop.less";

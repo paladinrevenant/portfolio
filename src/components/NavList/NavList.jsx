@@ -6,13 +6,13 @@ const NavList = (props) => (
   <nav className={ classes.NavList }>
     <ul>
       <li>
-        <Link to="/" onClick={props.drawerCloser}>Home</Link>
+        <Link to="/" onClick={props.clickHandler}>Home</Link>
       </li>
       <li>
-        <Link to="/skills/" onClick={props.drawerCloser}>Skills</Link>
+        <Link to="/skills/" onClick={props.clickHandler}>Skills</Link>
       </li>
       <li>
-        <Link to="/me/" onClick={props.drawerCloser}>About Me</Link>
+        <Link to="/me/" onClick={props.clickHandler}>About Me</Link>
       </li>
     </ul>
   </nav>

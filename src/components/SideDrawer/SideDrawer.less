@@ -1,9 +1,10 @@
 @import "~Assets/globalVariables.less";
 
 .SideDrawer {
+  display: block;
   width: 90vw;
   height: 95vh;
-  display: block;
+  padding: .5em;
   border: 1px solid black;
   border-radius: 0 1em 1em 0;
   position: fixed;
@@ -19,6 +20,17 @@
 
   &.closed {
     transform: translateX(0);
+  }
+
+  h2 {
+    font-size: 1.5em;
+    font-weight: bolder;
+    padding: .25em;
+    text-align: center;
+  }
+
+  nav li {
+    padding-bottom: .25em;
   }
 }
 

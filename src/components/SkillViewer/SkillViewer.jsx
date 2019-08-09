@@ -3,7 +3,6 @@ import skillList        from "Assets/skills";
 import SkillRow         from "Components/SkillRow/SkillRow";
 import SkillTab         from "Components/SkillTab/SkillTab";
 import clearSelections  from "Helpers/clearSelections";
-import validateConstant from "Helpers/validateConstant";
 import { uniqueId }     from "lodash";
 import { SKILL_TYPES }  from "Source/constants";
 import classes          from "./SkillViewer.less";
@@ -43,13 +42,15 @@ class SkillViewer extends React.Component {
 
     return (
       <div className={ classes.SkillViewer }>
-        <div className={ classes.tabBar }>
-          { languagesTab }
-          { frameworksTab }
-        </div>
-        <section className={ classes.list }>
-          <div className={ classes.skillList }>
-            { displayedSkills }
+        <section className={ classes.selection }>
+          <div className={ classes.tabBar }>
+            { languagesTab }
+            { frameworksTab }
+          </div>
+          <div className={ classes.list }>
+            <div className={ classes.skillList }>
+              { displayedSkills }
+            </div>
           </div>
         </section>
         <section className={ classes.detail }>

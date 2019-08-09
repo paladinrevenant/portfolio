@@ -6,7 +6,7 @@ import image from "Assets/300x400.png";
  * This component is the welcome section for the site. It is the first section
  * that the user will see upon vising the site.
  */
-const Welcome = (props) => (
+const Welcome = () => (
   <>
     Hi, my name is Mike and this is my portfolio.
     <img src={image} />

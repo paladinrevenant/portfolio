@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./About.less";
 import image from "Assets/300x400.png";
 
-const about = (props) => (
+const about = () => (
   <div className={ classes.About }>
     <h1>About Mike Maxson</h1>
     <img src={image} />

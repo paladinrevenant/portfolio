@@ -8,7 +8,6 @@ import TitleBar        from "Components/TitleBar/TitleBar";
 import TitleBarDesktop from "Components/TitleBarDesktop/TitleBarDesktop";
 import Welcome         from "Components/Welcome/Welcome";
 import ViewportService from "Services/viewport";
-import { VIEWS }       from "Source/constants";
 import classes         from "./App.less";
 
 class App extends React.Component {

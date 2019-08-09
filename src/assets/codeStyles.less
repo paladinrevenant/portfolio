@@ -2,11 +2,14 @@
   code.styled {
     background-color: @code-background;
     color: @code-foreground;
-    display: block;
     padding: .5em;
     font-family: "Lucida Console", Monaco, monospace;
     white-space: nowrap;
     overflow-x: auto;
+
+    * {
+      font-family: "Lucida Console", Monaco, monospace;
+    }
 
     .keyword {
       color: @code-pink;

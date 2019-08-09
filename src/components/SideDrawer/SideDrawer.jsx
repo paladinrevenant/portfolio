@@ -7,13 +7,12 @@ import classes from "./SideDrawer.less";
  */
 const SideDrawer = (props) => {
   // Rather than being conditionally rendered, the class list is switched around to support animation
-  const classList = props.open ? [classes.SideDrawer, classes.open] :
-                                 [classes.SideDrawer, classes.closed];
+  const classList = [classes.SideDrawer, props.open ? classes.open : classes.closed];
 
   return (
     <div className={classList.join(" ")}>
-      <div>Menu</div>
-      <NavList />
+      <h2>Menu</h2>
+      <NavList clickHandler={ props.drawerCloser }/>
     </div>
   );
 };

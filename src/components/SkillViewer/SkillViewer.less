@@ -1,5 +1,13 @@
+@import "~Assets/globalVariables.less";
+
 .SkillViewer {
+  display: flex;
   width: 100%;
+  flex-direction: column;
+
+  @media (min-width: @min-width-desktop) {
+    flex-direction: row;
+  }
 
   .tabBar {
     width: 100%;
@@ -8,14 +16,36 @@
     flex-direction: row;
   }
 
-  section.list {
-    padding: .5em;
-    border-bottom: 1px solid black;
+  section.selection {
+    width: 100%;
+    min-width: max-content;
+    
+    @media (min-width: @min-width-desktop) {
+      max-width: 25%;
+      min-height: 91vh;
+    }
 
-    .skillList {
-      display: table;
-      width: 100%;
-      border-spacing: 0 .75em;
+    div.list {
+      height: 100%;
+      padding: .5em;
+      border-bottom: 1px solid black;
+
+      @media (min-width: @min-width-desktop) {
+        display: flex;
+        border-right: 1px solid black;
+        justify-content: center;
+      }
+
+      .skillList {
+        display: table;
+        width: 100%;
+        border-spacing: 0 .75em;
+
+        @media (min-width: @min-width-desktop) {
+          width: 50%;
+          min-width: max-content;
+        }
+      }
     }
   }
 

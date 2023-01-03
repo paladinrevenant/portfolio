@@ -28,7 +28,7 @@ const about = () => (
       <h2>History</h2>
       <p>I was born in Indianapolis, Indiana, and grew up in a suburb called Plainfield. I had what most would consider a pretty good childhood. I had friends, school, Cub Scouts, and a great family. One time, I was riding my bike in the parking lot of a church across the street from my house. A branch fell in front of my bike as I was riding, and I rode straight through it. I got a twig through the white part of my eye and had to go to the hospital in Indianapolis to get it cleaned out and get stitches. I was very lucky not to lose the eye.</p>
       <p>When I was about 12 we moved to Bloomington, Indiana. I left friends behind, but I adapted and made new friends. I got into Scouts again, joined a children&apos;s choir, and got a job as a newspaper carrier.</p>
-      <p>In high school I met the woman I would end up marrying. I graduated from high school, went into college, got married, grduated college, and entered the workforce. I had kids, moved jobs a couple of times, and now it&apos;s the present.</p>
+      <p>In high school I met the woman I would end up marrying. I graduated from high school, went into college, got married, graduated college, and entered the workforce. I had kids, moved jobs a couple of times, and now it&apos;s the present.</p>
     </section>
   </div>
 );

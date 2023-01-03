@@ -7,7 +7,7 @@ import classes from "./SideDrawer.less";
  */
 const SideDrawer = (props) => {
   // Rather than being conditionally rendered, the class list is switched around to support animation
-  const classList = [classes.SideDrawer, props.open ? classes.open : classes.closed];
+  const classList = [classes.SideDrawer, props.isOpen ? classes.open : classes.closed];
 
   return (
     <div className={classList.join(" ")}>

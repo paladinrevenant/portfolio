@@ -1,0 +1,13 @@
+@import "~Assets/globalVariables.less";
+
+.content {
+  width: 100%;
+  position: absolute;
+  top: @top-buffer;
+  left: 0;
+
+  @media (min-width: @min-width-desktop) {
+    position: initial;
+    top: initial;
+  }
+}
